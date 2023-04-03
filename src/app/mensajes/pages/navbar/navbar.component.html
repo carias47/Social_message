@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img
+      class="img-fluid"
+      alt="Responsive image"
+      src="../../../assets/image/logo.PNG"
+      width="170px"
+    />
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarColor02"
+      aria-controls="navbarColor02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/home/add-mensaje']"
+            routerLinkActive="active"
+          >
+            <img id="icon" src="../../../assets/icons/create.svg" />
+            Create Messages</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/home/mis-mensajes']"
+            routerLinkActive="active"
+          >
+            <img id="icon" src="../../../assets/icons/send.svg" />
+            My Messages
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/home/mensajes']"
+            routerLinkActive="active"
+          >
+            <img id="icon" src="../../../assets/icons/chatbubbles-sharp.svg" />
+            See all messages</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img id="icon" src="../../../assets/icons/log-in-sharp.svg" />
+            Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

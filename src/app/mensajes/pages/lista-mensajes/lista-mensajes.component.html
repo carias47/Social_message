@@ -1,0 +1,42 @@
+<div class="container">
+  <h1 style="color: #f9fd6d">All Messages</h1>
+  <div class="mt-4">
+    <a style="color: #f9fd6d">¿What Search?</a>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        #Search
+        (keyup)="onSearchMessage(Search.value)"
+      />
+      <span class="input-group-text bg-danger">
+        <img src="../../../../assets/icons/search.svg"
+      /></span>
+    </div>
+  </div>
+
+  <div class="card mt-4" *ngFor="let item of mensajes | filter : search">
+    <div class="card-body">
+      <blockquote class="blockquote mb-0 text-primary">
+        <p>{{ item.titulo }}</p>
+        <footer class="blockquote-footer text-white">
+          {{ item.descripcion }}
+        </footer>
+      </blockquote>
+    </div>
+    <div class="card-footer">
+      {{ item.fechaCreate | date : "h:mm a M/d/yy" }}
+    </div>
+  </div>
+
+  <div class="container" *ngIf="listaVacia">
+    <div class="p-3 mb-2 bg-dark text-white text-center">
+      <h2>{{ listaVacia }}</h2>
+    </div>
+  </div>
+  <div class="row" *ngIf="(mensajes | filter : search).length === 0">
+    <div class="mx-auto" *ngIf="search">
+      <h3 class="mt-3">No se encontró nada con {{ search }}</h3>
+    </div>
+  </div>
+</div>

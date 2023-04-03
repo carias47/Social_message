@@ -1,0 +1,16 @@
+<div class="container">
+  <h2 class="mt-4" style="color: #f9fd6d">Preview...</h2>
+  <div class="card">
+    <div class="card-body">
+      <blockquote class="blockquote mb-0 text-primary">
+        <p>{{ titulo }}</p>
+        <footer class="blockquote-footer text-white">
+          {{ descripcion }}
+        </footer>
+      </blockquote>
+    </div>
+    <div class="card-footer">
+      {{ fechaCreated | date : "h:mm a M/d/yy" }}
+    </div>
+  </div>
+</div>

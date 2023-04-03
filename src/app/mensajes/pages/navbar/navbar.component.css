@@ -1,0 +1,14 @@
+@media only screen and (max-width: 991px) {
+    #navbarColor02{
+        background-color: rgb(255, 255, 255);
+    }
+    .navbar-dark .navbar-nav .nav-link{
+    color: rgb(4, 4, 4);
+    }
+}
+@media only screen and (min-width: 992px) {
+    #icon{
+     display: none;
+    }
+   
+}

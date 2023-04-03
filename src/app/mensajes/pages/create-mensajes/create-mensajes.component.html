@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+      <h1 class="mb-4" style="color: #f9fd6d">Create Messages</h1>
+      <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <div class="form-group">
+          <label for="titulo">Tittle</label>
+          <input
+            type="text"
+            class="form-control"
+            id="titulo"
+            name="titulo"
+            placeholder="take about me"
+            [(ngModel)]="titulo"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="form-group">
+          <label for="Descripcion">Message</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="create message for share write friends."
+            id="descripcion"
+            name="descripcion"
+            [(ngModel)]="descripcion"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-outline-success btn-block"
+          [disabled]="!f.valid"
+        >
+          <i class="far fa-plus-square"></i> Compartir
+        </button>
+        <button class="btn btn-outline-primary btn-block" (click)="volver()">
+          <i class="fas fa-arrow-alt-circle-left"></i> Volver
+        </button>
+      </form>
+      <div *ngIf="f.valid">
+        <app-preview
+          [titulo]="titulo"
+          [descripcion]="descripcion"
+        ></app-preview>
+      </div>
+    </div>
+  </div>
+</div>
