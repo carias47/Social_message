@@ -19,7 +19,6 @@ export class MensajeInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     let intReq = request;
     const token = this.tokenService.getToken();
-    console.log(token);
 
     if (token) {
       intReq = request.clone({
