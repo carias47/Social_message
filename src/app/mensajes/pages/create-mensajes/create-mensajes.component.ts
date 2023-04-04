@@ -3,6 +3,7 @@ import { MensajeService } from '../../services/mensaje.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Mensaje } from '../../interfaces/Mensaje';
+import { TokenService } from '../../services/token.service';
 
 @Component({
   selector: 'app-create-mensajes',
@@ -13,10 +14,12 @@ export class CreateMensajesComponent {
   titulo: string = '';
   descripcion: string = '';
   fechaCreated!: Date;
+  nombreUsuario: string = '';
 
   constructor(
     private mensajeService: MensajeService,
     private toastr: ToastrService,
+    private tokenService: TokenService,
     private router: Router
   ) {}
 
@@ -30,7 +33,7 @@ export class CreateMensajesComponent {
           timeOut: 3000,
           positionClass: 'toast-top-center',
         });
-        this.router.navigate(['/']);
+        this.messageCreatedOK();
       },
       (err) => {
         this.toastr.error(err.error.message, 'Fail', {
@@ -42,6 +45,9 @@ export class CreateMensajesComponent {
   }
 
   volver(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/app']);
+  }
+  messageCreatedOK() {
+    this.router.navigate(['/app/mis-mensajes']);
   }
 }

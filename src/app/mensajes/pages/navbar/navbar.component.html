@@ -18,11 +18,21 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['/home/add-mensaje']"
+            [routerLink]="['/app/home']"
+            routerLinkActive="active"
+          >
+            <i class="fa-solid fa-house"></i>
+            Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/app/add-mensaje']"
             routerLinkActive="active"
           >
             <img id="icon" src="../../../assets/icons/create.svg" />
@@ -32,7 +42,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['/home/mis-mensajes']"
+            [routerLink]="['/app/mis-mensajes']"
             routerLinkActive="active"
           >
             <img id="icon" src="../../../assets/icons/send.svg" />
@@ -42,21 +52,26 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['/home/mensajes']"
+            [routerLink]="['/app/mensajes']"
             routerLinkActive="active"
           >
             <img id="icon" src="../../../assets/icons/chatbubbles-sharp.svg" />
             See all messages</a
           >
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <img id="icon" src="../../../assets/icons/log-in-sharp.svg" />
-            Logout</a
-          >
-        </li>
       </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a
+          class="btn btn-outline-success"
+          routerLink="/auth/login"
+          *ngIf="!isLogged"
+        >
+          <i class="fas fa-sign-in-alt"></i>
+        </a>
+        <a class="btn btn-outline-danger" *ngIf="isLogged" (click)="logOut()">
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
+      </form>
     </div>
   </div>
 </nav>

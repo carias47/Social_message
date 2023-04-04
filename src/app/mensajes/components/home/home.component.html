@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="jumbotron mt-5">
+    <h1 class="display-4" *ngIf="!nombreUsuario; else user">Hello, world!</h1>
+    <ng-template #user
+      ><h1 class="display-4">Hello, {{ nombreUsuario }}!</h1></ng-template
+    >
+    <p class="lead">
+      Welcome to Social Wires, we are a social network that seeks to facilitate
+      people's publications in a space in order to express what they like on the
+      network. You will be able to register and create your own publications and
+      see those of the other contacts in your network.
+    </p>
+    <hr class="my-4" />
+    <p>¡Let's go there!</p>
+    <p class="lead" *ngIf="nombreUsuario; else redirectTemplate">
+      <a class="btn btn-primary btn-lg" routerLink="/app/mensajes" role="button"
+        >read more...</a
+      >
+    </p>
+    <ng-template #redirectTemplate>
+      <a class="btn btn-primary btn-lg" routerLink="/auth/login" role="button"
+        >read more...</a
+      >
+    </ng-template>
+  </div>
+</div>

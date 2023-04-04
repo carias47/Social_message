@@ -24,8 +24,9 @@
         </footer>
       </blockquote>
     </div>
-    <div class="card-footer">
-      {{ item.fechaCreate | date : "h:mm a M/d/yy" }}
+    <div class="card-footer d-flex justify-content-between">
+      <div>{{ item.fechaCreate | date : "h:mm a M/d/yy" }}</div>
+      <div>{{ nombreUsuario }}</div>
     </div>
   </div>
 

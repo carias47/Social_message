@@ -10,7 +10,14 @@
       </blockquote>
     </div>
     <div class="card-footer">
-      {{ fechaCreated | date : "h:mm a M/d/yy" }}
+      <div class="row">
+        <div class="col-8">
+          {{ fechaCreated | date : "h:mm a M/d/yy" }}
+        </div>
+        <div class="col-4 float-end">
+          {{ nombreUsuario }}
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListaMensajesComponent } from './pages/lista-mensajes/lista-mensajes.component';
 
 import { CreateMensajesComponent } from './pages/create-mensajes/create-mensajes.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     children: [
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
       {
         path: 'mensajes',
         component: ListaMensajesComponent,
@@ -22,7 +27,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'mensajes',
+        redirectTo: 'home',
       },
     ],
   },
