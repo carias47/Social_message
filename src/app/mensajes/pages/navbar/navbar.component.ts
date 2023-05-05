@@ -8,16 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  isLogged!: boolean;
+  isLogged: boolean = false;
 
   constructor(private tokenService: TokenService, private router: Router) {}
 
   ngOnInit(): void {
-    this.isLogged = this.tokenService.isLogged();
+    this.tokenService.isLogged()
+      ? (this.isLogged = true)
+      : (this.isLogged = false);
   }
 
   logOut(): void {
     this.tokenService.logOut();
-    this.router.navigate(['auth/login']);
+    this.router.navigate(['/auth']);
   }
 }

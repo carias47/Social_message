@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./mensajes/mensajes.module').then((m) => m.MensajesModule),
   },
+  {
+    path: '**',
+    redirectTo: 'auth',
+  },
 ];
 
 @NgModule({

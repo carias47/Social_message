@@ -9,8 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './mensajes/components/home/home.component';
 import { AuthRoutingModule } from './auth/auth-routing.module';
+import { MensajesRoutingModule } from './mensajes/mensajes-routing.module';
 import { interceptorProvider } from './interceptors/mensaje.interceptor';
-import { MensajesModule } from './mensajes/mensajes.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HomeComponent],
@@ -20,10 +20,10 @@ import { MensajesModule } from './mensajes/mensajes.module';
     BrowserAnimationsModule,
     HttpClientModule,
     AuthRoutingModule,
-    MensajesModule,
+    MensajesRoutingModule,
     ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

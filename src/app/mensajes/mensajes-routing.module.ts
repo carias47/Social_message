@@ -4,10 +4,12 @@ import { ListaMensajesComponent } from './pages/lista-mensajes/lista-mensajes.co
 
 import { CreateMensajesComponent } from './pages/create-mensajes/create-mensajes.component';
 import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './pages/navbar/navbar.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: NavbarComponent,
     children: [
       {
         path: 'home',

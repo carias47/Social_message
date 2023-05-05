@@ -3,7 +3,7 @@
     <img
       class="img-fluid"
       alt="Responsive image"
-      src="../../../assets/image/logo.PNG"
+      src="../../../assets/images/logo.PNG"
       width="170px"
     />
     <button
@@ -60,18 +60,19 @@
           >
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <a
-          class="btn btn-outline-success"
-          routerLink="/auth/login"
-          *ngIf="!isLogged"
+      <form class="form-inline">
+        <a class="btn btn-outline-success" routerLink="/auth" *ngIf="!isLogged">
+          <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+        </a>
+        <button
+          class="btn btn-outline-danger"
+          *ngIf="isLogged"
+          (click)="logOut()"
         >
-          <i class="fas fa-sign-in-alt"></i>
-        </a>
-        <a class="btn btn-outline-danger" *ngIf="isLogged" (click)="logOut()">
-          <i class="fas fa-sign-out-alt"></i>
-        </a>
+          <i class="fas fa-sign-out-alt"></i>Cerrar Sesión
+        </button>
       </form>
     </div>
   </div>
 </nav>
+<router-outlet></router-outlet>

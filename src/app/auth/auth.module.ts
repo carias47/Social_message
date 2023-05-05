@@ -5,10 +5,10 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { interceptorProvider } from '../interceptors/mensaje.interceptor';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegistroComponent],
+  declarations: [LoginComponent, RegistroComponent, MainComponent],
   imports: [CommonModule, AuthRoutingModule, FormsModule],
   providers: [],
 })

@@ -1,83 +1,74 @@
-<div class="container d-flex justify-content-center">
-  <div class="card mt-2" id="card">
-    <img
-      class="card-img-top"
-      src="../../../assets/image/welcome.PNG"
-      alt="Card image cap"
+<form #f="ngForm" novalidate (ngSubmit)="onRegister()">
+  <span class="login100-form-title p-b-49"> New User </span>
+
+  <div class="wrap-input100 m-b-23">
+    <span class="label-input100">User</span>
+    <input
+      class="input100"
+      type="text"
+      name="nombreUsuario"
+      placeholder="Nickname"
+      id="nombreUsuario"
+      autocomplete="off"
+      required
+      [(ngModel)]="nombreUsuario"
     />
-    <div class="card-header">
-      <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/auth/login">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/auth/registro">Sign In</a>
-        </li>
-      </ul>
-      <div class="card-body">
-        <form #f="ngForm" novalidate (ngSubmit)="onRegister()">
-          <div class="form-group">
-            <label for="nombreUsuario" class="text-white">Nickname</label>
-            <input
-              type="text"
-              class="form-control"
-              name="nombreUsuario"
-              placeholder="Nickname"
-              id="nombreUsuario"
-              autocomplete="off"
-              required
-              [(ngModel)]="nombreUsuario"
-            />
-            <div class="form-group">
-              <label for="nombreUsuario " class="text-white mt-3">Name </label>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Full name"
-                name="nombre"
-                id="nombre"
-                autocomplete="off"
-                [(ngModel)]="nombre"
-              />
-            </div>
-            <div class="form-group mt-2">
-              <label for="email" class="text-white">Email Adress</label>
-              <input
-                type="email"
-                class="form-control"
-                name="email"
-                placeholder="Example@gmail.com"
-                id="email"
-                autocomplete="off"
-                required
-                [(ngModel)]="email"
-              />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="nombreUsuario" class="text-white">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              name="password"
-              id="password"
-              required
-              [(ngModel)]="password"
-            />
-          </div>
-          <div class="form-group">
-            <button
-              class="btn btn-warning btn-block text-light"
-              type="submit"
-              [disabled]="!f.valid"
-            >
-              Crear cuenta
-            </button>
-            <p class="text-center mt-2">All Rights Reserved. WIRES</p>
-            <p class="text-center">Privacy Policy Tems & Conditions</p>
-          </div>
-        </form>
-      </div>
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="wrap-input100 m-b-23">
+    <span class="label-input100">Name</span>
+    <input
+      class="input100"
+      type="text"
+      placeholder="Full name"
+      name="nombre"
+      id="nombre"
+      autocomplete="off"
+      [(ngModel)]="nombre"
+    />
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="wrap-input100 m-b-23">
+    <span class="label-input100">Email Adress</span>
+    <input
+      class="input100"
+      type="email"
+      name="email"
+      placeholder="Example@gmail.com"
+      id="email"
+      autocomplete="off"
+      required
+      [(ngModel)]="email"
+    />
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="wrap-input100">
+    <span class="label-input100">Password</span>
+    <input
+      class="input100"
+      type="password"
+      name="password"
+      placeholder="Password"
+      id="password"
+      required
+      [(ngModel)]="password"
+    />
+    <span class="focus-input100"></span>
+  </div>
+  <div class="text-right p-t-8 p-b-31"></div>
+
+  <div class="container-login100-form-btn">
+    <div class="wrap-login100-form-btn">
+      <div class="login100-form-bgbtn"></div>
+      <button class="login100-form-btn" [disabled]="!f.valid">Registrar</button>
     </div>
   </div>
-</div>
+  <div class="flex-col-c p-t-60">
+    <span class="txt1 p-b-17"> ¿Ya tienes cuenta? </span>
+
+    <a routerLink="/auth" class="txt2"> Ingresa aquí </a>
+  </div>
+</form>

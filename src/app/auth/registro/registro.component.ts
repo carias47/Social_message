@@ -8,13 +8,7 @@ import { AuthService } from 'src/app/mensajes/services/auth.service';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styles: [
-    `
-      #card {
-        width: 500px;
-      }
-    `,
-  ],
+  styles: [],
 })
 export class RegistroComponent {
   usuario!: nuevoUsuarioDto;

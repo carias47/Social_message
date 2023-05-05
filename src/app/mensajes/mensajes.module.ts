@@ -8,10 +8,9 @@ import { ListaMensajesComponent } from './pages/lista-mensajes/lista-mensajes.co
 import { CreateMensajesComponent } from './pages/create-mensajes/create-mensajes.component';
 import { FiltroPipe } from './pipes/filter.pipe';
 import { PreviewComponent } from './components/preview/preview.component';
-import { interceptorProvider } from '../interceptors/mensaje.interceptor';
 
 @NgModule({
-  providers: [interceptorProvider],
+  providers: [],
   declarations: [
     ListaMensajesComponent,
     CreateMensajesComponent,
